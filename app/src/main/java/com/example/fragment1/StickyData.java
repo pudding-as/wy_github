@@ -1,4 +1,4 @@
-package com.example.wyweixin;
+package com.example.fragment1;
 
 public class StickyData {
     public String area;

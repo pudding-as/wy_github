@@ -1,7 +1,6 @@
-package com.example.wyweixin;
+package com.example.fragment1;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,13 +8,14 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class adapter extends RecyclerView.Adapter<adapter.myviewhoder> {
+public class adapter extends RecyclerView.Adapter<adapter.myviewholder> {
 
-    private static final String TAG = adapter.class.getSimpleName();
-    private List<StickyData> list;
+    private List<StickyData>list;
     private List<String> listChrid;
     private Context context;
     private View inflater;
@@ -24,20 +24,20 @@ public class adapter extends RecyclerView.Adapter<adapter.myviewhoder> {
     public static final int HAS_STICKY_VIEW = 2;
     public static final int NONE_STICKY_VIEW = 3;
 
-    public adapter(Context context,List<StickyData> list) {
-        this.context = context;
-        this.list = list;
+    public adapter(Context context,List<StickyData>list) {
+        this.context=context;
+        this.list=list;
     }
 
     @Override
-    public myviewhoder onCreateViewHolder(ViewGroup parent, int viewType) {
-        inflater = LayoutInflater.from(context).inflate(R.layout.tab01,parent,false);
-        myviewhoder myviewhoder = new myviewhoder(inflater);
-        return myviewhoder;
+    public myviewholder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        inflater= LayoutInflater.from(context).inflate(R.layout.item,viewGroup,false);
+        myviewholder myviewholder=new myviewholder(inflater);
+        return myviewholder;
     }
 
     @Override
-    public void onBindViewHolder(final myviewhoder holder, int position) {
+    public void onBindViewHolder(final myviewholder holder, int position) {
         listChrid = new ArrayList<String>();
         initData();
 
@@ -94,6 +94,12 @@ public class adapter extends RecyclerView.Adapter<adapter.myviewhoder> {
         listChrid.add("5");
         listChrid.add("6");
         listChrid.add("7");
+        listChrid.add("8");
+        listChrid.add("9");
+        listChrid.add("10");
+        listChrid.add("11");
+        listChrid.add("12");
+        listChrid.add("13");
     }
 
     @Override
@@ -101,11 +107,11 @@ public class adapter extends RecyclerView.Adapter<adapter.myviewhoder> {
         return list.size();
     }
 
-    class myviewhoder extends RecyclerView.ViewHolder{
+    class myviewholder extends RecyclerView.ViewHolder{
         RelativeLayout rlParent, rlChild;
         TextView  tvTeamChild;
         TextView tvArea, tvTeam;
-        public myviewhoder(View itemView) {
+        public myviewholder(View itemView) {
             super(itemView);
             tvArea = itemView.findViewById(R.id.tv_sticky_header_view);
             tvTeam = itemView.findViewById(R.id.tv_team);
@@ -113,5 +119,6 @@ public class adapter extends RecyclerView.Adapter<adapter.myviewhoder> {
             rlChild = itemView.findViewById(R.id.rl_child);
             tvTeamChild = itemView.findViewById(R.id.tv_team_child);
         }
+
     }
 }

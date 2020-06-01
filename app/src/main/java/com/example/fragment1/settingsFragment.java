@@ -1,4 +1,4 @@
-package com.example.wyweixin;
+package com.example.fragment1;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import android.app.Fragment;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class friendFragment extends Fragment {
+public class settingsFragment extends Fragment {
 
 
-    public friendFragment() {
+    public settingsFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class friendFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.tab02, container, false);
+        return inflater.inflate(R.layout.tab04, container, false);
     }
 
 }

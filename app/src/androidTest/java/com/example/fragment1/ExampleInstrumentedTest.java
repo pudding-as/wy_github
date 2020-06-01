@@ -1,4 +1,4 @@
-package com.example.wyweixin;
+package com.example.fragment1;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.wyweixin", appContext.getPackageName());
+        assertEquals("com.example.fragment1", appContext.getPackageName());
     }
 }
